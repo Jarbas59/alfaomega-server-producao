@@ -1,178 +1,95 @@
 {% if bloco.bloco.nome == 'BANNER_3' %}
-<section data-aos="fade-up">
-  <h2 class="mt-4 text-center justify-content-center">Estatísticas de Clientes</h2>
-  <div class="container py-4 d-flex flex-column align-items-center justify-content-center gap-5">
+<section class="secao-feedback py-5">
+    <div class="container">
 
-    <!-- Texto -->
-    <div class="col-md-6 col-lg-5 text-center justify-content-center">
-      <span class="badge bg-warning text-dark mb-3 px-3 py-2 fs-6">Nossos Números</span>
-      <h2 class="fw-bold mb-3">Resultados que falam por si</h2>
-      <p class="text-muted">
-        Mais do que estatísticas, nossos números representam a confiança e a satisfação de quem escolhe a Lixadora Cardoso. 
-        Cada projeto finalizado é um passo a mais na construção de ambientes renovados e clientes felizes.
-      </p>
-      <a href="https://forms.gle/cHj5x7kB35MhDGHo8" target="_blank" class="btn btn-dark btn-lg mt-3">Deixe sua avaliação</a>
+        <h2 class="text-center fw-bold mb-2" style="color:#d4a017;">Feedbacks</h2>
+        <p class="text-center mb-5 text-white">
+            Veja o que os clientes dizem sobre o atendimento e a qualidade do nosso serviço de reparo.
+        </p>
+
+        <div class="row g-4">
+
+            <!-- CARD 1 -->
+            <div class="col-md-4">
+                <div class="card avaliacao-card h-100 p-4 shadow-sm">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="user-foto me-3"></div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Marcos Silva</h5>
+                            <small>Cliente Residencial</small>
+                        </div>
+                    </div>
+                    <p>
+                        Serviço excelente! O técnico chegou no horário, identificou o problema rapidamente 
+                        e fez o reparo no mesmo dia. Muito educado e profissional. Recomendo demais.
+                    </p>
+                    <div class="text-warning mt-auto">
+                        ★★★★★
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="col-md-4">
+                <div class="card avaliacao-card h-100 p-4 shadow-sm">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="user-foto me-3"></div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Patrícia Azevedo</h5>
+                            <small>Comércio Local</small>
+                        </div>
+                    </div>
+                    <p>
+                        Atendimento impecável! Meu estabelecimento não podia ficar parado e o reparador 
+                        resolveu tudo muito rápido. Transparente no valor e no que estava sendo feito.
+                    </p>
+                    <div class="text-warning mt-auto">
+                        ★★★★★
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="col-md-4">
+                <div class="card avaliacao-card h-100 p-4 shadow-sm">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="user-foto me-3"></div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">Rodrigo Martins</h5>
+                            <small>Condomínio</small>
+                        </div>
+                    </div>
+                    <p>
+                        Muito competente. Fez o reparo, explicou tudo direitinho e ainda deu dicas para evitar 
+                        futuros problemas. Atendimento top! Chamarei novamente se precisar.
+                    </p>
+                    <div class="text-warning mt-auto">
+                        ★★★★★
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    
-    <div class="radial-charts d-flex flex-wrap justify-content-center gap-5">
-
-      <!-- Gráfico 1 -->
-      <div class="radial-chart-wrapper">
-        <div class="radial-chart" data-value="90" data-color="#007bff">
-          <svg width="140" height="140">
-            <circle cx="70" cy="70" r="60" stroke="#eee" stroke-width="12" fill="none"/>
-            <circle cx="70" cy="70" r="60" stroke-width="12" fill="none"/>
-          </svg>
-          <div class="radial-label">90%</div>
-        </div>
-        <p class="radial-text mt-2">Clientes Satisfeitos</p>
-      </div>
-
-      <!-- Gráfico 2 -->
-      <div class="radial-chart-wrapper">
-        <div class="radial-chart" data-value="75" data-color="#28a745">
-          <svg width="140" height="140">
-            <circle cx="70" cy="70" r="60" stroke="#eee" stroke-width="12" fill="none"/>
-            <circle cx="70" cy="70" r="60" stroke-width="12" fill="none"/>
-          </svg>
-          <div class="radial-label">75%</div>
-        </div>
-        <p class="radial-text mt-2">Projetos Concluídos</p>
-      </div>
-
-      <!-- Gráfico 3 -->
-      <div class="radial-chart-wrapper">
-        <div class="radial-chart" data-value="96" data-color="#ffc107">
-          <svg width="140" height="140">
-            <circle cx="70" cy="70" r="60" stroke="#eee" stroke-width="12" fill="none"/>
-            <circle cx="70" cy="70" r="60" stroke-width="12" fill="none"/>
-          </svg>
-          <div class="radial-label">96%</div>
-        </div>
-        <p class="radial-text mt-2">Retenção de Clientes</p>
-      </div>
-
-      <!-- Gráfico 4 -->
-      <div class="radial-chart-wrapper">
-        <div class="radial-chart" data-value="60" data-color="#dc3545">
-          <svg width="140" height="140">
-            <circle cx="70" cy="70" r="60" stroke="#eee" stroke-width="12" fill="none"/>
-            <circle cx="70" cy="70" r="60" stroke-width="12" fill="none"/>
-          </svg>
-          <div class="radial-label">60%</div>
-        </div>
-        <p class="radial-text mt-2">Novos Clientes</p>
-      </div>
-
-    </div>
-  </div>
 </section>
+{% endif %}
 
 <style>
-.radial-charts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem;
+  .secao-feedback {
+    padding-block: 50px;
+    background: #333;
 }
 
-.radial-chart-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 140px;
+.avaliacao-card {
+    border-radius: 14px;
+    background: white;
 }
 
-.radial-chart {
-  position: relative;
-  width: 140px;
-  height: 140px;
-}
-.radial-chart svg {
-  transform: rotate(-90deg);
-}
-.radial-chart circle:nth-child(2) {
-  stroke-linecap: round;
-}
-.radial-label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-.radial-text {
-  font-size: 0.95rem;
-  color: #555;
-  text-align: center;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .radial-charts {
-    gap: 2rem;
-  }
-  .radial-chart-wrapper {
-    width: 150px;
-  }
-  .radial-chart {
-    width: 150px;
-    height: 150px;
-  }
-  .radial-chart svg {
-    width: 150px;
-    height: 150px;
-  }
-
-  .container.py-5.d-flex {
-    flex-direction: column !important; /* empilha em coluna */
-    align-items: center; /* centraliza horizontalmente */
-  }
-
-  .col-md-6.col-lg-7.pl-lg-5.py-md-5 {
-    padding-left: 0 !important; /* remove padding lateral no mobile */
-    text-align: center; /* centraliza texto */
-  }
-
-  .radial-charts {
-    gap: 2rem; /* mantém espaçamento */
-  }
+.user-foto {
+    width: 55px;
+    height: 55px;
+    background: #ddd;
+    border-radius: 50%;
 }
 </style>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const charts = document.querySelectorAll(".radial-chart");
-
-  charts.forEach(chart => {
-    const circle = chart.querySelector("circle:nth-child(2)");
-    const radius = circle.r.baseVal.value;
-    const circumference = 2 * Math.PI * radius;
-    const value = parseFloat(chart.dataset.value);
-    const color = chart.dataset.color;
-
-    circle.style.stroke = color;
-    circle.style.strokeDasharray = circumference;
-    circle.style.strokeDashoffset = circumference;
-    circle.style.transition = "stroke-dashoffset 1s ease-in-out";
-
-    let growing = true;
-
-    function animate() {
-      if (growing) {
-        circle.style.strokeDashoffset = circumference - (value / 100) * circumference;
-      } else {
-        circle.style.strokeDashoffset = circumference;
-      }
-      growing = !growing;
-    }
-
-    // anima a cada 1.5s
-    setInterval(animate, 2500);
-  });
-});
-</script>
-
-{% endif %}
 

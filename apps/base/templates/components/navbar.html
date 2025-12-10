@@ -1,68 +1,144 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg position-absolute top-0 w-100 px-5" style="height: 120px; z-index: 10;">
-    <div class="container-fluid">
+<nav class="navbar custom-navbar navbar-expand-lg w-100 px-4">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+        <!-- Logo -->
         <a class="navbar-brand" href="/">
-            <img src="{{ logo.image.url }}" width="120" alt="{{ logo.title }}" title="{{ logo.title }}" class="Logo">
+            <img src="{{ logo.image.url }}" alt="{{ logo.title }}" title="{{ logo.title }}" class="logo-img">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-lg-auto mb-lg-0 flex-row gap-3 px-3" style="font-style: 18px;">
-                <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#sobre">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#faq">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#contato">Contato</a>
-                </li>
-            </ul>
+
+        <!-- MENU DESKTOP -->
+        <ul class="navbar-nav d-none d-lg-flex flex-row gap-4" style="color: #E4E4E5;">
+            <li class="nav-item"><a class="nav-link text-white" href="#">Início</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#sobre">Sobre</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#contato">Contato</a></li>
+
             {% if user.is_authenticated %}
-                <span class="p-2"><i class="fas fa-user mx-2"></i>{{user.first_name}} {{user.last_name}}</span>
-                <button class="btn btn-danger mx-2" data-bs-toggle="modal" href="#logoutModal">Logout</button>
-                <button type="button" class="btn btn-warning" onclick="window.location.href='/admin/'">Admin</button>
+                <li class="nav-item text-white">
+                    <i class="fas fa-user mx-1" style="color: #E4E4E5; margin-top: 7px"></i>{{user.first_name}} {{user.last_name}}
+                </li>
+                <li><button class="btn btn-danger btn-sm" data-bs-toggle="modal" href="#logoutModal">Logout</button></li>
+                <li><button class="btn btn-warning btn-sm" onclick="window.location.href='/admin/'">Admin</button></li>
             {% else %}
-                <button class="btn btn-warning mx-2" id="btn-entrar" onclick="location.href='{% url 'login' %}'">Entrar</button>
+                <li><button class="btn btn-warning btn-sm" onclick="location.href='{% url 'login' %}'">Entrar</button></li>
             {% endif %}
+        </ul>
+
+        <!-- Botão Hambúrguer Mobile -->
+        <button class="hamburger-btn d-lg-none" id="hamburgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- MENU MOBILE -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="navbar-nav flex-column text-center mt-4 gap-3">
+                <li class="nav-item"><a class="nav-link text-white" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#sobre">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#faq">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#contato">Contato</a></li>
+
+                {% if user.is_authenticated %}
+                    <span class="mt-3"><i class="fas fa-user mx-2"></i>{{user.first_name}} {{user.last_name}}</span>
+                    <button class="btn btn-danger mt-2" data-bs-toggle="modal" href="#logoutModal">Logout</button>
+                    <button type="button" class="btn btn-warning mt-2" onclick="window.location.href='/admin/'">Admin</button>
+                {% else %}
+                    <button class="btn btn-warning mt-3" onclick="location.href='{% url 'login' %}'">Entrar</button>
+                {% endif %}
+            </ul>
         </div>
+
     </div>
 </nav>
 
 <style>
-@media (min-width: 768px) and (max-width: 1199px) {
-    .navbar #btn-entrar{
-        display: none;
+.custom-navbar {
+    position: absolute;
+    top: 0;
+    height: 120px;
+    z-index: 10;
+    background: transparent;
+}
+
+/* Logo */
+.logo-img {
+    width: 250px;
+    transition: 0.3s ease;
+}
+
+@media (max-width: 992px) {
+    .logo-img {
+        width: 170px !important;
     }
 }
 
-@media (max-width: 990px) {
-    .navbar-brand img {
-        display: none;
-    }
-
-    .navbar #btn-entrar{
-        display: none;
+@media (max-width: 768px) {
+    .logo-img {
+        width: 150px !important;
     }
 }
 
-@media (max-width: 767px){
-    .navbar-brand img {
-        display: none;
-    }
+/* Botão Hambúrguer */
+.hamburger-btn {
+    width: 35px;
+    height: 28px;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 999;
+}
 
-    .navbar #btn-entrar{
-        display: none;
-    }
+.hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: white;
+    border-radius: 5px;
+    transition: .3s ease;
+}
 
-    .nav-item{
-        font-size: 14px;
-        text-align: center;
-    }
+/* Animação virar X */
+.hamburger-btn.active span:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+}
+.hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+}
+
+/* MENU MOBILE DESLIZANTE */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(17, 17, 17, 0.51);
+    padding-top: 100px;
+    transition: .4s ease;
+    z-index: 998;
+}
+
+.mobile-menu.active {
+    right: 0;
 }
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("hamburgerBtn");
+    const menu = document.getElementById("mobileMenu");
+
+    btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+        menu.classList.toggle("active");
+    });
+});
+</script>

@@ -156,7 +156,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ALLOW_CREDENTIALS = False 
 
-CORS_ORIGIN_WHITELIST = ['http://lixadoracardoso.com.br',] # Lista. 
+CORS_ORIGIN_WHITELIST = ['http://allfaomega.com.br',] # Lista. 
 
 if not DEBUG:
 	SECURE_SSL_REDIRECT = True
@@ -239,13 +239,11 @@ MESSAGE_TAGS = {
 }
 
 #Configurações de TimeOut:
-
 SESSION_EXPIRE_SECONDS = 1800
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
-SESSION_TIMEOUT_REDIRECT = 'https://lixadoracardoso.com.br/contas/timeout/'
+SESSION_TIMEOUT_REDIRECT = 'https://allfaomega.com.br/contas/timeout/'
 
 #Redirecionamento após login/logout:
-
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
