@@ -1,6 +1,12 @@
-/*global.css*/
+/* ============================
+    Importação de Fontes
+============================ */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+/* ============================
+        Variáveis Globais
+============================ */
 :root {
     --main-color-default: #5c5b5b;
     --main-color: #fbf8f8;
@@ -10,10 +16,22 @@
     --color-warning: #efd400;
     --color-disable: #a3a3a3;
     --button-hover: #797979;
-    --navbar-height: 200px;
+
+    /* Altura da navbar (usada no mobile também) */
+    --navbar-height: 90px;
 }
 
-/* Site Configuration */
+/* Altura ajustada da navbar no mobile */
+@media (max-width: 768px) {
+    :root {
+        --navbar-height: 90px; /* pode aumentar se quiser mais espaço */
+    }
+}
+
+
+/* ============================
+        Configurações Gerais
+============================ */
 body {
     width: 100%;
     height: 100%;
@@ -27,8 +45,10 @@ a {
     color: var(--color-disable);
 }
 
-/* style.css */
 
+/* ============================
+        Sidebar
+============================ */
 .sidebar {
     position: fixed;
     height: 100%;
@@ -40,29 +60,85 @@ a {
     height: 60px;
 }
 
+
+/* ============================
+        Espaçamento dos blocos
+============================ */
 .bloco {
-    margin: 70px 0px 70px 0px;
+    margin: 70px 0px;
 }
 
+
+/* ============================
+        Paginação
+============================ */
 .pagination .page-link {
     background: rgb(138, 138, 138);
     color: white;
     border: none;
 }
 
-/* Carousel */
+
+/* ============================
+        CAROUSEL / SLIDES
+============================ */
+
+/* Impede o slide de causar scroll lateral */
 .carousel-inner {
     width: 100%;
-    overflow: hidden; /* evita scroll horizontal */
+    overflow: hidden;
 }
 
+/* Imagens – desktop */
 .carousel-item img {
     width: 100%;
-    height: auto; /* altura proporcional */
+    height: auto;
     object-fit: cover;
 }
 
-/* Container que segura os botões */
+/* CAPTION – Ajustes no mobile */
+@media (max-width: 768px) {
+
+    /* Move o texto para baixo da navbar */
+    .carousel-caption {
+        margin-top: var(--navbar-height);
+        padding-top: 10px !important;
+        text-align: left !important;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Título principal */
+    .carousel-caption h1 {
+        font-size: 1.4rem !important;
+        font-weight: 800;
+    }
+
+    /* Subtítulo */
+    .carousel-caption span {
+        font-size: 0.95rem !important;
+    }
+
+    /* Texto pequeno */
+    .carousel-caption p {
+        font-size: 0.85rem !important;
+        line-height: 1.25;
+    }
+
+    /* Aumenta a altura mínima da imagem no mobile */
+    .carousel-item img {
+        min-height: 750px;
+        object-position: center;
+    }
+}
+
+
+/* ============================
+        BOTÕES FLUTUANTES
+============================ */
 .floating-buttons {
     position: fixed;
     bottom: 20px;
@@ -70,11 +146,9 @@ a {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* espaço entre os botões */
     z-index: 1000;
 }
 
-/* Estilo base dos botões */
 .floating-buttons a {
     width: 60px;
     height: 60px;
@@ -87,35 +161,21 @@ a {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Imagens dentro dos botões */
 .floating-buttons a img {
     max-width: 60%;
     max-height: 60%;
     object-fit: contain;
-    display: block;
 }
 
-/* Hover */
 .floating-buttons a:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Cores específicas */
 .btn-phone {
     background-color: #25d366;
-    /* azul */
 }
 
 .btn-whatsapp {
     background-color: #25d366;
-    /* verde WhatsApp */
 }
-
-
-
-
-
-
-
-

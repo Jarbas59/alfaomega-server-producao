@@ -24,7 +24,7 @@
             {% else %}
             <div class="carousel-item">
             {% endif %} 
-                <img src="{{slide.imagem.url}}" class="object-fit-cover d-block w-100" style="min-height: 700px; max-height: 1100px" alt="Imagem de Slide">
+                <img src="{{slide.imagem.url}}" class="object-fit-cover d-block w-100" alt="Imagem de Slide">
                 <div class="carousel-caption d-flex flex-column justify-content-center pb-3 pb-md-5 h-100 px-4">
                     <div class="row align-items-center text-start">
                         <div class="col-md-8 pt-5">
@@ -55,64 +55,56 @@
     display: none;
 }
 
-/* Mantém estrutura */
 .carousel-item {
     position: relative;
 }
 
-/* Sombra aplicada diretamente na imagem */
+/* sombra na imagem */
 .carousel-item img {
     width: 100%;
-    height: auto; /* deixa responsivo */
+    height: auto;
     object-fit: cover;
-    filter: brightness(55%); /* sombra */
+    filter: brightness(55%);
     z-index: 0;
 }
 
-/* Mantém o texto por cima */
 .carousel-caption {
     z-index: 2;
 }
 
-/* ------------ MOBILE (ATÉ 768PX) ------------ */
-@media (max-width: 768px){
-
-    /* Remove as alturas fixas — agora fica automático */
-    .carousel-item{
+/* ------------ MOBILE ----------- */
+@media (max-width: 768px) {
+    .carousel-item {
         height: auto;
     }
 
-    .carousel-item img{
-        height: auto;
-    }
-
-    .carousel-caption {
-        padding-top: var(--navbar-height) !important;
+    .carousel-item img {
+        min-height: 750px;
+        object-position: center;
     }
 
     .carousel-caption h1 {
-        font-size: 1.2rem;
-        line-height: 1.2;
+        font-size: 1.4rem !important;
+        font-weight: 800;
     }
 
     .carousel-caption span {
-        font-size: 0.9rem;
+        font-size: 0.95rem !important;
     }
 
     .carousel-caption p {
-        font-size: 0.85rem;
+        font-size: 0.85rem !important;
+        line-height: 1.25;
     }
 }
 
-/* --------- TABLET (768PX ATÉ 1199PX) --------- */
+/* --------- TABLET --------- */
 @media (min-width: 768px) and (max-width: 1199px) {
-
-    /* Remove altura fixa e deixa a imagem ajustar naturalmente */
-    .carousel-item{
+    .carousel-item {
         height: auto;
     }
 
-    .carousel-item img{
+    .carousel-item img {
         height: auto;
     }
 
@@ -127,19 +119,6 @@
 
     .carousel-caption p {
         font-size: 0.9rem;
-    }
-
-    /* Seus estilos antigos mantidos */
-    .bloco {
-        padding-left: 250px;
-    }
-
-    .sidebar {
-        width: 100%;
-    }
-
-    footer {
-        display: none;
     }
 }
 </style>
