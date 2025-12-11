@@ -18,13 +18,13 @@
     --button-hover: #797979;
 
     /* Altura da navbar (usada no mobile também) */
-    --navbar-height: 90px;
+    --navbar-height: 120px;
 }
 
 /* Altura ajustada da navbar no mobile */
 @media (max-width: 768px) {
     :root {
-        --navbar-height: 90px; /* pode aumentar se quiser mais espaço */
+        --navbar-height: 120px; /* pode aumentar se quiser mais espaço */
     }
 }
 
